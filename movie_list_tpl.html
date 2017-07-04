@@ -1,0 +1,25 @@
+<h1>{{resData.title}}</h1>
+<div ng-hide="isLoading" style="text-align: center;"><img src="img/loading.gif" alt=""></div>
+<div ng-show="isLoading">
+    <div class="list">
+        <a href="#!/detail/{{movie.id}}" ng-repeat="movie in movieList">
+            <dl>
+                <dt><img ng-src="{{movie.images.small}}" alt=""></dt>
+                <dd>
+                    <h4>{{movie.title}}</h4>
+                    <p>类型:{{movie.genres}} </p>
+                    <p>导演: 扎克波克</p>
+                    <p>主演: 本.阿弗莱喜克</p>
+                </dd>
+                <span class="score">42分</span>
+            </dl>
+        </a>
+
+    </div>
+
+    <div class="page">
+        共:{{curPage}}/{{totalPage}}
+        <a ng-click="page('prePage')" ng-show="isPrePage">上一页</a>
+        <a ng-click="page('nextPage')" ng-show="isNextPage">下一页</a>
+    </div>
+</div>
